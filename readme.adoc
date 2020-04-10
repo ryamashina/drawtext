@@ -54,8 +54,8 @@ image::test_drawtext.jpg[出力画像]
 .Terminal
 [source, bash]
 ----
-wget https://github.com/ryamashina/drawtext/blob/master/dist/drawtext-0.0.1.tar.gz
-pip3 install drawtext-0.0.1.tar.gz
+git clone https://github.com/ryamashina/drawtext.git
+pip3 install drawtext/dist/drawtext-0.0.1.tar.gz
 ----
 
 == Run
