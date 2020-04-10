@@ -1,0 +1,9 @@
+setup.py
+drawtext.egg-info/PKG-INFO
+drawtext.egg-info/SOURCES.txt
+drawtext.egg-info/dependency_links.txt
+drawtext.egg-info/entry_points.txt
+drawtext.egg-info/requires.txt
+drawtext.egg-info/top_level.txt
+src/NotoSerifCJKjp-Black.otf
+src/drawtext.py

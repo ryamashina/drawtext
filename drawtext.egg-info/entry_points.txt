@@ -1,0 +1,3 @@
+[console_scripts]
+drawtext = src.drawtext:main
+

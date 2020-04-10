@@ -1,0 +1,111 @@
+:toc:
+:sectnums:
+:source-highlighter: highlightjs
+:icons: font
+
+= drawtext
+
+JPEG形式の画像に指定したテキスト印字します。
+
+Print the specified text on the JPEG image.
+
+CAUTION: JPEG形式の画像のみ処理可能です。
+
+CAUTION: Only JPEG images can be processed.
+
+CAUTION: Ubuntu18.04で動作確認しています。
+
+== Licence
+
+This software is released under the MIT License, see LICENSE.txt.
+
+=== 同梱フォント : Include Fonts
+
+印字するデフォルトのフォントとして下記を同梱しています。
+
+The following fonts are included in the package as default fonts for printing.
+
+. https://www.google.com/get/noto/[Google Noto Fonts]
+** NotoSerifCJKjp-Black.otf
+** https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL[SIL Open Font License (OFL)]
+
+=== 同梱画像 : Include image
+
+印字テスト用の画像として下記を同梱しています。
+
+The following images are included for printing tests.
+
+++++
+<a href="https://pixabay.com/ja/users/annekroiss-6057516/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3867920">Anne Kroiß</a>による<a href="https://pixabay.com/ja/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3867920">Pixabay</a>からの画像
+++++
+
+== Example
+
+.Terminal
+----
+drawtext test.jpg $'印字例\nテキストを印字'
+----
+
+.出力画像: test_drawtext.jpg
+image::test_drawtext.jpg[出力画像]
+
+== Install
+
+.Terminal
+[source, bash]
+----
+wget https://github.com/ryamashina/drawtext/blob/master/dist/drawtext-0.0.1.tar.gz
+pip3 install drawtext-0.0.1.tar.gz
+----
+
+== Run
+
+.Terminal
+[source, bash]
+----
+~/.local/bin/drawtext test.jpg $'印字例\nテキストを印字'
+----
+
+CAUTION: Change your PATH for installed drawtext command.
+
+== Usage
+
+.drawtext -h
+----
+usage: drawtext [-h] [-of OUTPUT_FILE] [-ff FONT_FILE] [-fs FONT_SIZE]
+                [-sw STROKE_WIDTH] [-sp SPACING] [-al ALIGN] [-fc FONT_COLOR]
+                [-sc STROKE_COLOR] [-rc RECT_COLOR]
+                input_image_file text
+
+Draw text on JPEG.
+
+positional arguments:
+  input_image_file      File name of input image. The image must be in JPEG
+                        format.
+  text                  Text for insert to image.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -of OUTPUT_FILE, --output_file OUTPUT_FILE
+                        Output image file name. default is
+                        "${input_image_file}_drawtext.jpg".
+  -ff FONT_FILE, --font_file FONT_FILE
+                        Font file name for text. default is "NotoSerifCJKjp-
+                        Black.otf".
+  -fs FONT_SIZE, --font_size FONT_SIZE
+                        Font size for text. default is 50.
+  -sw STROKE_WIDTH, --stroke_width STROKE_WIDTH
+                        Stroke width for text. default is 3.
+  -sp SPACING, --spacing SPACING
+                        Spacing for text line. default is 0.
+  -al ALIGN, --align ALIGN
+                        Align for text. default is "center".
+  -fc FONT_COLOR, --font_color FONT_COLOR
+                        Font color for text. default is "#FFFF00".
+  -sc STROKE_COLOR, --stroke_color STROKE_COLOR
+                        Stroke color for text. default is "#000000".
+  -rc RECT_COLOR, --rect_color RECT_COLOR
+                        Rect color for background of font. default is
+                        "#FFFFFF80".
+
+----
